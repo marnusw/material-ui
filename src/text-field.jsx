@@ -26,6 +26,7 @@ let TextField = React.createClass({
   propTypes: {
     errorStyle: React.PropTypes.object,
     errorText: React.PropTypes.string,
+    underlineStyle: React.PropTypes.object,
     floatingLabelStyle: React.PropTypes.object,
     floatingLabelText: React.PropTypes.string,
     fullWidth: React.PropTypes.bool,
@@ -219,6 +220,7 @@ let TextField = React.createClass({
       className,
       errorStyle,
       errorText,
+      underlineStyle,
       floatingLabelText,
       fullWidth,
       hintText,
@@ -288,9 +290,9 @@ let TextField = React.createClass({
     }
 
     let underlineElement = this.props.disabled ? (
-      <div style={this.mergeAndPrefix(styles.underlineAfter)}></div>
+      <div style={this.mergeAndPrefix(styles.underlineAfter, underlineStyle)}></div>
     ) : (
-      <hr style={this.mergeAndPrefix(styles.underline)}/>
+      <hr style={this.mergeAndPrefix(styles.underline, underlineStyle)}/>
     );
     let focusUnderlineElement = <hr style={this.mergeAndPrefix(styles.focusUnderline)} />;
 
