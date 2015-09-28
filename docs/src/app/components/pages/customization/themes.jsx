@@ -69,7 +69,7 @@ const ThemesPage = React.createClass({
   },
 
   getStyles() {
-    let canvasColor = this.state.muiTheme.rawTheme.palette.canvasColor;
+    let alternateTextColor = this.state.muiTheme.rawTheme.palette.alternateTextColor;
     let borderColor = this.state.muiTheme.rawTheme.palette.borderColor;
     let styles = {
       group: {
@@ -105,7 +105,7 @@ const ThemesPage = React.createClass({
         marginBottom: '0px'
       },
       codeExample: {
-        backgroundColor: canvasColor,
+        backgroundColor: alternateTextColor,
         marginBottom: '32px'
       },
       title: {
@@ -118,7 +118,7 @@ const ThemesPage = React.createClass({
         color: Typography.textDarkBlack
       },
       liveExamplePaper: {
-        backgroundColor: canvasColor,
+        backgroundColor: alternateTextColor,
         marginBottom: 32,
         overflow: 'hidden'
       },
@@ -158,21 +158,21 @@ const ThemesPage = React.createClass({
   render() {
 
     let lightRawTheme = 
-      'let Colors = require(\'..\/colors\');\n' +
-      'let ColorManipulator = require(\'..\/..\/utils\/color-manipulator\');\n' +
-      'let Spacing = require(\'..\/spacing\');\n\n' +
+      'let Colors = require(\'material-ui/lib/styles/colors\');\n' +
+      'let ColorManipulator = require(\'material-ui/lib/utils/color-manipulator\');\n' +
+      'let Spacing = require(\'material-ui/lib/styles/spacing\');\n\n' +
       'module.exports = {\n' +
       '  spacing: Spacing,\n' +
       '  fontFamily: \'Roboto, sans-serif\',\n' +
       '  palette: {\n' +
       '    primary1Color: Colors.cyan500,\n' +
       '    primary2Color: Colors.cyan700,\n' +
-      '    primary3Color: Colors.cyan100,\n' +
+      '    primary3Color: Colors.lightBlack,\n' +
       '    accent1Color: Colors.pinkA200,\n' +
-      '    accent2Color: Colors.pinkA400,\n' +
-      '    accent3Color: Colors.pinkA100,\n' +
+      '    accent2Color: Colors.grey100,\n' +
+      '    accent3Color: Colors.grey500,\n' +
       '    textColor: Colors.darkBlack,\n' +
-      '    canvasColor: Colors.white,\n' +
+      '    alternateTextColor: Colors.white,\n' +
       '    borderColor: Colors.grey300,\n' +
       '    disabledColor: ColorManipulator.fade(Colors.darkBlack, 0.3),\n' +
       '  },\n' +
@@ -326,7 +326,7 @@ const ThemesPage = React.createClass({
 
         <div style={styles.bottomBorderWrapper}>
           <p>
-            We changed how themes work in v0.12 (check out <a href="https://github.com/callemall/material-ui/releases/tag/v0.12">release log</a> for more details). 
+            We changed how themes work in v0.12.0 (check out <a href="https://github.com/callemall/material-ui/releases/tag/v0.12.0">release log</a> for more details). 
             There are now two kinds of themes in Material-UI: <b>raw theme</b> and <b>mui theme</b>.
             The raw theme is a plain JS object containing three keys: spacing, palette and fontFamily.
             The mui theme, on the other hand, is a much bigger object. It contains a key for every material-ui
